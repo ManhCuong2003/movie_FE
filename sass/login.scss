@@ -1,0 +1,165 @@
+@import url(../css/reset.css);
+.login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#141414;
+    overflow: hidden;
+    position: relative;
+    &__form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 100;   
+        &__left {
+            padding: 40px;
+            
+            a{
+                width: 300px;
+                display: block;
+                img {
+                    width: 100%;
+                }
+            }
+            animation-name: ToTheRight;
+            animation-duration: 0.5s;
+        }
+
+        &__right {
+            color: #fff !important;
+            padding-top: 40px;
+            padding-bottom: 15px;
+            padding-left: 70px;
+            border-left: 2px solid rgba(241, 241, 241, 0.15);
+            h3 {
+                font-weight: 400;
+                font-size: 20px;
+                margin-bottom: 20px;
+
+            }
+
+            input {
+                width: 100%;
+                border: 1px solid rgba(241, 241, 241, 0.25);
+                padding: 10px 15px;
+                background-color: transparent;
+                color: #fff;
+                border-radius: 0.25rem;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                outline: none;
+                margin: 10px 0;
+                animation-name: ToTheMoon;
+                animation-duration: 0.1s;
+                &:nth-child(3){
+                    animation-duration: 0.5s;
+                }
+            }
+
+            button {
+                font-family: "Roboto", sans-serif;
+                cursor: pointer;
+                display: inline-block;
+                font-size: 17px;
+                font-weight: 500;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                outline: none;
+                border: none;
+                color: #fff;
+                border-radius: 3px;
+                background-color: #ffbd31;
+                padding: 15px 36px;
+                margin-bottom: 10px;
+                width: 100%;
+                -webkit-transition: all 0.3s ease-in-out;
+                -o-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+                margin-top: 20px;
+                animation-name: ToTheMoon;
+                animation-duration: 0.7s;
+                &:hover {
+                    background-color: #db9e2d;
+                    border-color: #db9e2d;
+                }
+            }
+            a {
+                display: block;
+                animation-name: ToTheMoon;
+                animation-duration: 1.2s;
+                text-decoration: none;
+                color: #fff;
+                text-align: center;
+                font-size: 15px;
+            }
+        }
+    }
+    iframe {
+        filter: Blur(15px);
+        -webkit-filter: blur(15px);
+        transform: scale(1.4);
+    }
+}
+
+@keyframes ToTheMoon {
+    from {
+        transform: translateY(100px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes ToTheRight {
+    from {
+        transform: translatex(-100px);
+    }
+    to {
+        transform: translatex(0px);
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .login {
+        background-image: url("https://genk.mediacdn.vn/139269124445442048/2021/12/23/26990980413790933458516078869869368984213137n-16402267344512075604121.jpg");
+        background-size: cover;
+        background-position: center center;
+        &__form {
+            padding: 0 20px;
+            &__left {
+                width: 300px;
+            }
+        }
+        iframe {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .login {
+      &__form {
+        flex-direction: column;
+        &__left {
+          padding: 0;
+          a {
+            width: 300px !important;
+          }
+        }
+        &__right {
+          border: none;
+          border-top: 2px solid rgba(241, 241, 241, 0.15);
+          margin: 0;
+          padding: 0;
+          h3 {
+            text-align: center;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
